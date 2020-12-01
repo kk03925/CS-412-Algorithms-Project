@@ -5,7 +5,7 @@ from DataGeneration import DataGeneration
 def main():
 	# Main function that generates data and uses 
 	# it to find and plot execution time for all 
-	# 3 algorithms seperately and on the same figure
+	# 3 algorithms separately and on the same figure
 	# for comparison
 
 	# Generating data

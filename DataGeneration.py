@@ -32,7 +32,7 @@ def DataGeneration():
 
 	inputs = {}
 
-	for n in range(NMIN, NMAX, NINTERVAL):
+	for n in range(NMIN, NMAX + NINTERVAL, NINTERVAL):
 		
 		# creating list of n points
 		inputs[n] = []
@@ -48,3 +48,16 @@ def DataGeneration():
 			inputs[n].append((x, y))
 
 	return inputs
+
+
+def _Test():
+	# "Private" function for testing 
+
+	data = DataGeneration()
+
+	for n in data:
+		print(str(n) + " points: " + str(data[n]) + "\n")  
+
+
+if __name__ == '__main__':
+    _Test()

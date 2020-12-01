@@ -18,7 +18,7 @@ NINTERVAL = 100
 
 # Main code
 
-import random as r
+import numpy.random as r
 
 def DataGeneration():
 	# Function to generate data in the form of dictionary
@@ -41,8 +41,8 @@ def DataGeneration():
 		for point in range(1, n + 1):
 			
 			# generating random point
-			x = r.randint(XMIN, XMAX)
-			y = r.randint(YMIN, YMAX)
+			x = r.randint(XMIN, XMAX + 1)
+			y = r.randint(YMIN, YMAX + 1)
 
 			# adding to list of points
 			inputs[n].append((x, y))

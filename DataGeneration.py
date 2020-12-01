@@ -6,7 +6,7 @@ XMIN = -1000
 XMAX = 1000
 
 # y axis
-YMIN = 1000
+YMIN = -1000
 YMAX = 1000
 
 # n range

@@ -11,7 +11,7 @@ def main():
 	# Generating data
 	inputs = DataGeneration()
 	
-	inputSizes = inputs.keys().sort()
+	inputSizes = sorted(inputs.keys())
 
 	# Setting labels for the graphs
 	p.ylabel("Running time in milliseconds")

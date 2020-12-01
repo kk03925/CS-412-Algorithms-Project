@@ -49,7 +49,7 @@ def gift_wrapping( list_of_points):
 
     tuple_of_hull_points= []
     for i in list_of_convexhull_points:
-        print(list_of_points[i][0] , list_of_points[i][1])
+        # print(list_of_points[i][0] , list_of_points[i][1])
         tuple_of_hull_points.append((list_of_points[i][0] , list_of_points[i][1]))
     return tuple_of_hull_points
 

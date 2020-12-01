@@ -1,6 +1,9 @@
 import time as t
 import matplotlib.pyplot as p
 from DataGeneration import DataGeneration
+from giftwrapping import gift_wrapping
+from graham_scan import graham_scan
+
 
 def main():
 	# Main function that generates data and uses 
@@ -9,12 +12,13 @@ def main():
 	# for comparison
 
 	# Generating data
+	print("Generating data ...")
 	inputs = DataGeneration()
 	
 	inputSizes = sorted(inputs.keys())
 
 	# Setting labels for the graphs
-	p.ylabel("Running time in milliseconds")
+	p.ylabel("Running time in microseconds")
 	p.xlabel("Input size in number of points")
 
 	# gift_wrapping
@@ -27,7 +31,7 @@ def main():
 		print("Running gift_wrapping for input size: " + str(n) + " ...")
 		
 		startTime = t.clock()
-		gift_wrapping(inputs[n])
+		# gift_wrapping(inputs[n])
 		endTime = t.clock()	
 		
 		# Storing execution time for n points to plot
@@ -71,7 +75,7 @@ def main():
 		print("Running KPS for input size: " + str(n) + " ...")
 		
 		startTime = t.clock()
-		KPS(inputs[n])
+		# KPS(inputs[n])
 		endTime = t.clock()	
 		
 		# Storing execution time for n points to plot
@@ -88,8 +92,8 @@ def main():
 	# plotting and showing
 	print("Plotting for all algorithms...")
 	p.plot(inputSizes, gift_wrappingExecTimes, 'r')
-	p.plot(inputSizes, graham_scanExecTimes, 'b')
-	p.plot(inputSizes, KPSExecTimes, 'g')
+	p.plot(inputSizes, graham_scanExecTimes, 'g')
+	p.plot(inputSizes, KPSExecTimes, 'b')
 	p.title("Running Time For All Algorithms")
 	p.legend(["gift_wrapping", "graham_scan", "KPS"])
 	p.show()

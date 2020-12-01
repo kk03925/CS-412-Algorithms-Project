@@ -1,8 +1,26 @@
 import time as t
 import matplotlib.pyplot as p
+# import pandas as pd
 from DataGeneration import DataGeneration
 from giftwrapping import gift_wrapping
 from graham_scan import graham_scan
+from quickHull2 import quickHull
+
+
+# def _Smoothen(numbers):
+# 	# Function to smoothen graphs using
+# 	# moving averages
+
+# 	window_size = len(numbers)
+
+# 	numbers_series = pd.Series(numbers)
+# 	windows = numbers_series.rolling(window_size)
+# 	moving_averages = windows.mean()
+
+# 	moving_averages_list = moving_averages.tolist()
+# 	without_nans = moving_averages_list[window_size - 1:]
+
+# 	return without_nans
 
 
 def main():
@@ -17,11 +35,11 @@ def main():
 	
 	inputSizes = sorted(inputs.keys())
 
+	# gift_wrapping
+
 	# Setting labels for the graphs
 	p.ylabel("Running time in microseconds")
 	p.xlabel("Input size in number of points")
-
-	# gift_wrapping
 
 	# List to store execution times
 	# for different input sizes (n values)
@@ -37,6 +55,10 @@ def main():
 		# Storing execution time for n points to plot
 		gift_wrappingExecTimes.append(endTime - startTime)
 
+
+	# # smoothening 
+	# gift_wrappingExecTimes = _Smoothen(gift_wrappingExecTimes)
+
 	# plotting and showing
 	print("Plotting ...")
 	p.plot(inputSizes, gift_wrappingExecTimes, 'r')
@@ -44,6 +66,10 @@ def main():
 	p.show()
 
 	# graham_scan
+
+	# Setting labels for the graphs
+	p.ylabel("Running time in microseconds")
+	p.xlabel("Input size in number of points")
 
 	# List to store execution times
 	# for different input sizes (n values)
@@ -59,32 +85,42 @@ def main():
 		# Storing execution time for n points to plot
 		graham_scanExecTimes.append(endTime - startTime)
 
+	# # smoothening 
+	# graham_scanExecTimes = _Smoothen(graham_scanExecTimes)
+
 	# plotting and showing
 	print("Plotting ...")
 	p.plot(inputSizes, graham_scanExecTimes, 'g')
 	p.title("graham_scan Running Time")
 	p.show()
 
-	# KPS
+	# quickHull
+
+	# Setting labels for the graphs
+	p.ylabel("Running time in microseconds")
+	p.xlabel("Input size in number of points")
 
 	# List to store execution times
 	# for different input sizes (n values)
-	KPSExecTimes = [] 
+	quickHullExecTimes = [] 
 
 	for n in inputs:
-		print("Running KPS for input size: " + str(n) + " ...")
+		print("Running quickHull for input size: " + str(n) + " ...")
 		
 		startTime = t.clock()
-		# KPS(inputs[n])
+		quickHull(inputs[n])
 		endTime = t.clock()	
 		
 		# Storing execution time for n points to plot
-		KPSExecTimes.append(endTime - startTime)
+		quickHullExecTimes.append(endTime - startTime)
+
+	# # smoothening 
+	# quickHullExecTimes = _Smoothen(quickHullExecTimes)
 
 	# plotting and showing
 	print("Plotting ...")
-	p.plot(inputSizes, KPSExecTimes, 'b')
-	p.title("KPS Running Time")
+	p.plot(inputSizes, quickHullExecTimes, 'b')
+	p.title("quickHull Running Time")
 	p.show()
 
 	# All algorithms
@@ -93,9 +129,9 @@ def main():
 	print("Plotting for all algorithms...")
 	p.plot(inputSizes, gift_wrappingExecTimes, 'r')
 	p.plot(inputSizes, graham_scanExecTimes, 'g')
-	p.plot(inputSizes, KPSExecTimes, 'b')
+	p.plot(inputSizes, quickHullExecTimes, 'b')
 	p.title("Running Time For All Algorithms")
-	p.legend(["gift_wrapping", "graham_scan", "KPS"])
+	p.legend(["gift_wrapping", "graham_scan", "quickHull"])
 	p.show()
 	
 

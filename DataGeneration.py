@@ -12,7 +12,7 @@ YMAX = 10000
 # n range
 NMIN = 10
 NMAX = 10000
-NINTERVAL = 5
+NINTERVAL = 10
 
 # =============
 

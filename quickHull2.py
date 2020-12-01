@@ -26,13 +26,13 @@ def quickHullHelper(point_lst,n,p_1,p_2,pointSide,finalHull):
       index = i
       max_dist = val
 
-  if (ind == -1):
+  if (index == -1):
     finalHull.append(p_1)
     finalHull.append(p_2)
     return finalHull
   
-  a = quickHullHelper(point_lst,len(point_lst),point_lst[ind],p_1, -1*(findSide(point_lst[ind],p_1,p_2)),finalHull)
-  b = quickHullHelper(point_lst,len(point_lst),point_lst[ind],p_2, -1*(findSide(point_lst[ind],p_2,p_1)),a)
+  a = quickHullHelper(point_lst,len(point_lst),point_lst[index],p_1, -1*(findSide(point_lst[index],p_1,p_2)),finalHull)
+  b = quickHullHelper(point_lst,len(point_lst),point_lst[index],p_2, -1*(findSide(point_lst[index],p_2,p_1)),a)
 
   return b
 

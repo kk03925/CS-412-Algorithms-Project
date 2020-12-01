@@ -1,12 +1,15 @@
 # Settings
 # Note: please only tweak these values
 
+# x axix
 XMIN = -1000
 XMAX = 1000
 
+# y axis
 YMIN = 1000
 YMAX = 1000
 
+# n range
 NMIN = 100
 NMAX = 1000
 NINTERVAL = 100

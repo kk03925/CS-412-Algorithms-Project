@@ -80,9 +80,3 @@ def graham_scan(points):
             stack.append(polar_sorted[i])
             stack_size += 1
     return stack
-
-points  = [[0, 3], [1, 1], [2, 2], [4, 4], 
-                      [0, 0], [1, 2], [3, 1], [3, 3]];
-
-n = len(points)/len(points[0]);
-print (graham_scan(points) )

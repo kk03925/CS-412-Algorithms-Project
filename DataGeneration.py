@@ -2,16 +2,16 @@
 # Note: please only tweak these values
 
 # x axix
-XMIN = -5000
-XMAX = 5000
+XMIN = -10000
+XMAX = 10000
 
 # y axis
-YMIN = -5000
-YMAX = 5000
+YMIN = -10000
+YMAX = 10000
 
 # n range
 NMIN = 10
-NMAX = 5000
+NMAX = 10000
 NINTERVAL = 5
 
 # =============

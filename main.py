@@ -31,7 +31,7 @@ def main():
 		print("Running gift_wrapping for input size: " + str(n) + " ...")
 		
 		startTime = t.clock()
-		# gift_wrapping(inputs[n])
+		gift_wrapping(inputs[n])
 		endTime = t.clock()	
 		
 		# Storing execution time for n points to plot

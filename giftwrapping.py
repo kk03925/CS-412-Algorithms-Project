@@ -9,8 +9,11 @@ def left_most_point(list_of_points):
     left_point=0
     for i in range(len(list_of_points)-1):
       
-        if list_of_points[i][0] <= list_of_points[left_point][0]:
-            minn = i
+        if list_of_points[i][0] < list_of_points[left_point][0]:
+            left_point = i
+        elif list_of_points[i][0] == list_of_points[left_point][0]:
+            if list_of_points[i][1] > list_of_points[left_point][1]:
+                left_point=i 
     return left_point
 
 def orientation(p,q,r):
@@ -63,11 +66,11 @@ def main():
     #dict_of_all_points[100] is a list_of_points
 
     #display func has 2 arg: 1) list_of_points=all points , 2)list of hull points
-    plotting.display (dict_of_all_points[200], [])  #this plots a graph for all points
+    plotting.display (dict_of_all_points[700], [])  #this plots a graph for all points
 
-    hull_points_list = gift_wrapping(dict_of_all_points[200]) #gift_wrapping returns us a list of tuples of hullpoints
-    
-    plotting.display (dict_of_all_points[200], hull_points_list) #plots the final graph with hull points
+    hull_points_list = gift_wrapping(dict_of_all_points[700]) #gift_wrapping returns us a list of tuples of hullpoints
+    #print(hull_points_list)
+    plotting.display (dict_of_all_points[700], hull_points_list) #plots the final graph with hull points
 
 if __name__ == "__main__":
     main()

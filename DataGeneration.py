@@ -1,4 +1,5 @@
 # Settings
+# Note: please only tweak these values
 
 XMIN = -1000
 XMAX = 1000

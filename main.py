@@ -17,81 +17,81 @@ def main():
 	p.ylabel("Running time in milliseconds")
 	p.xlabel("Input size in number of points")
 
-	# algo1
+	# gift_wrapping
 
 	# List to store execution times
 	# for different input sizes (n values)
-	algo1ExecTimes = [] 
+	gift_wrappingExecTimes = [] 
 
 	for n in inputs:
-		print("Running algo1 for input size: " + str(n) + " ...")
+		print("Running gift_wrapping for input size: " + str(n) + " ...")
 		
 		startTime = t.clock()
-		# algo1(inputs[n])
+		gift_wrapping(inputs[n])
 		endTime = t.clock()	
 		
 		# Storing execution time for n points to plot
-		algo1ExecTimes.append(endTime - startTime)
+		gift_wrappingExecTimes.append(endTime - startTime)
 
 	# plotting and showing
 	print("Plotting ...")
-	p.plot(inputSizes, algo1ExecTimes, 'r')
-	p.title("algo1 Running Time")
+	p.plot(inputSizes, gift_wrappingExecTimes, 'r')
+	p.title("gift_wrapping Running Time")
 	p.show()
 
-	# algo2
+	# graham_scan
 
 	# List to store execution times
 	# for different input sizes (n values)
-	algo2ExecTimes = [] 
+	graham_scanExecTimes = [] 
 
 	for n in inputs:
-		print("Running algo2 for input size: " + str(n) + " ...")
+		print("Running graham_scan for input size: " + str(n) + " ...")
 		
 		startTime = t.clock()
-		# algo2(inputs[n])
+		graham_scan(inputs[n])
 		endTime = t.clock()	
 		
 		# Storing execution time for n points to plot
-		algo2ExecTimes.append(endTime - startTime)
+		graham_scanExecTimes.append(endTime - startTime)
 
 	# plotting and showing
 	print("Plotting ...")
-	p.plot(inputSizes, algo2ExecTimes, 'g')
-	p.title("algo2 Running Time")
+	p.plot(inputSizes, graham_scanExecTimes, 'g')
+	p.title("graham_scan Running Time")
 	p.show()
 
-	# algo3
+	# KPS
 
 	# List to store execution times
 	# for different input sizes (n values)
-	algo3ExecTimes = [] 
+	KPSExecTimes = [] 
 
 	for n in inputs:
-		print("Running algo3 for input size: " + str(n) + " ...")
+		print("Running KPS for input size: " + str(n) + " ...")
 		
 		startTime = t.clock()
-		# algo3(inputs[n])
+		KPS(inputs[n])
 		endTime = t.clock()	
 		
 		# Storing execution time for n points to plot
-		algo3ExecTimes.append(endTime - startTime)
+		KPSExecTimes.append(endTime - startTime)
 
 	# plotting and showing
 	print("Plotting ...")
-	p.plot(inputSizes, algo3ExecTimes, 'b')
-	p.title("algo3 Running Time")
+	p.plot(inputSizes, KPSExecTimes, 'b')
+	p.title("KPS Running Time")
 	p.show()
 
 	# All algorithms
 
 	# plotting and showing
 	print("Plotting for all algorithms...")
-	p.plot(inputSizes, algo1ExecTimes, 'r')
-	p.plot(inputSizes, algo2ExecTimes, 'b')
-	p.plot(inputSizes, algo3ExecTimes, 'g')
+	p.plot(inputSizes, gift_wrappingExecTimes, 'r')
+	p.plot(inputSizes, graham_scanExecTimes, 'b')
+	p.plot(inputSizes, KPSExecTimes, 'g')
 	p.title("Running Time For All Algorithms")
-	p.legend(["algo1", "algo2", "algo3"])
+	p.legend(["gift_wrapping", "graham_scan", "KPS"])
 	p.show()
 	
 

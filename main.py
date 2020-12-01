@@ -10,6 +10,8 @@ from quickHull2 import quickHull
 # def _Smoothen(numbers):
 # 	# Function to smoothen graphs using
 # 	# moving averages
+#	# taken from:
+#	# https://www.kite.com/python/answers/how-to-find-the-moving-average-of-a-list-in-python
 
 # 	window_size = len(numbers)
 
@@ -37,7 +39,7 @@ def main():
 
 	# gift_wrapping
 
-	# Setting labels for the graphs
+	# Setting labels for the graph
 	p.ylabel("Running time in microseconds")
 	p.xlabel("Input size in number of points")
 
@@ -67,7 +69,7 @@ def main():
 
 	# graham_scan
 
-	# Setting labels for the graphs
+	# Setting labels for the graph
 	p.ylabel("Running time in microseconds")
 	p.xlabel("Input size in number of points")
 
@@ -96,7 +98,7 @@ def main():
 
 	# quickHull
 
-	# Setting labels for the graphs
+	# Setting labels for the graph
 	p.ylabel("Running time in microseconds")
 	p.xlabel("Input size in number of points")
 
@@ -124,6 +126,10 @@ def main():
 	p.show()
 
 	# All algorithms
+
+	# Setting labels for the graph
+	p.ylabel("Running time in microseconds")
+	p.xlabel("Input size in number of points")
 
 	# plotting and showing
 	print("Plotting for all algorithms...")

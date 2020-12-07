@@ -43,9 +43,9 @@ def main():
 
 	print("Running gift_wrapping for all input sizes in the dataset ...")
 	for n in inputs:
-		startTime = t.clock()
+		startTime = t.time()
 		gift_wrapping(inputs[n])
-		endTime = t.clock()	
+		endTime = t.time()	
 		
 		# Storing execution time for n points
 		gift_wrappingExecTimes.append(endTime - startTime)
@@ -70,9 +70,9 @@ def main():
 
 	print("Running graham_scan for all input sizes in the dataset ...")
 	for n in inputs:
-		startTime = t.clock()
+		startTime = t.time()
 		graham_scan(inputs[n])
-		endTime = t.clock()	
+		endTime = t.time()	
 
 		# Storing execution time for n points
 		graham_scanExecTimes.append(endTime - startTime)
@@ -98,10 +98,10 @@ def main():
 	for n in inputs:
 		qHObj = quickHull(inputs[n])
 
-		startTime = t.clock()
+		startTime = t.time()
 		qHObj.quickHull()
 		qHObj.finalHull
-		endTime = t.clock()	
+		endTime = t.time()	
 		
 		# Storing execution time for n points
 		quickHullExecTimes.append(endTime - startTime)
@@ -125,9 +125,9 @@ def main():
 
 	print("Running pyhull.convex_hull.ConvexHull (library function) for all input sizes in the dataset ...")
 	for n in inputs:
-		startTime = t.clock()
+		startTime = t.time()
 		ConvexHull(inputs[n]).vertices
-		endTime = t.clock()	
+		endTime = t.time()	
 		
 		# Storing execution time for n points
 		ConvexHullExecTimes.append(endTime - startTime)

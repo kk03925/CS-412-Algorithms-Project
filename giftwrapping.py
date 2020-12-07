@@ -69,7 +69,7 @@ def main():
     plotting.display (dict_of_all_points[n], [])  #this plots a graph for all points
 
     hull_points_list = gift_wrapping(dict_of_all_points[n]) #gift_wrapping returns us a list of tuples of hullpoints
-    print(hull_points_list)
+    #print(hull_points_list)
     plotting.display (dict_of_all_points[n], hull_points_list) #plots the final graph with hull points
 
 if __name__ == "__main__":

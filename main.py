@@ -69,9 +69,6 @@ def main():
 	graham_scanExecTimes = [] 
 
 	print("Running graham_scan for all input sizes in the dataset ...")
-	
-	# maxh = 0 # Maximum h
-
 	for n in inputs:
 		startTime = t.clock()
 		graham_scan(inputs[n])

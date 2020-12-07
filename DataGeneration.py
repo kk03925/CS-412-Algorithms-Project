@@ -38,14 +38,18 @@ def DataGeneration():
 		inputs[n] = []
 
 		# generating random n points
-		for point in range(1, n + 1):
+		for point in range(n):
 			
 			# generating random point
 			x = r.randint(XMIN, XMAX + 1)
 			y = r.randint(YMIN, YMAX + 1)
 
+			while ([x, y] in inputs[n]):
+				x = r.randint(XMIN, XMAX + 1)
+				y = r.randint(YMIN, YMAX + 1)
+
 			# adding to list of points
-			inputs[n].append((x, y))
+			inputs[n].append([x, y])
 
 	return inputs
 

@@ -53,7 +53,7 @@ def gift_wrapping( list_of_points):
     tuple_of_hull_points= []
     for i in list_of_convexhull_points:
         # print(list_of_points[i][0] , list_of_points[i][1])
-        tuple_of_hull_points.append((list_of_points[i][0] , list_of_points[i][1]))
+        tuple_of_hull_points.append([list_of_points[i][0] , list_of_points[i][1]])
     return tuple_of_hull_points
 
 
@@ -61,16 +61,16 @@ def gift_wrapping( list_of_points):
 def main():
 
     dict_of_all_points=  DataGeneration.DataGeneration()
-
+    n=200
     #dict_of_all_points[100] gives us list of 100 tuples
     #dict_of_all_points[100] is a list_of_points
-
+    
     #display func has 2 arg: 1) list_of_points=all points , 2)list of hull points
-    plotting.display (dict_of_all_points[700], [])  #this plots a graph for all points
+    plotting.display (dict_of_all_points[n], [])  #this plots a graph for all points
 
-    hull_points_list = gift_wrapping(dict_of_all_points[700]) #gift_wrapping returns us a list of tuples of hullpoints
-    #print(hull_points_list)
-    plotting.display (dict_of_all_points[700], hull_points_list) #plots the final graph with hull points
+    hull_points_list = gift_wrapping(dict_of_all_points[n]) #gift_wrapping returns us a list of tuples of hullpoints
+    print(hull_points_list)
+    plotting.display (dict_of_all_points[n], hull_points_list) #plots the final graph with hull points
 
 if __name__ == "__main__":
     main()

@@ -99,8 +99,11 @@ def main():
 
 	print("Running quickHull for all input sizes in the dataset ...")
 	for n in inputs:
+		qHObj = quickHull(inputs[n])
+
 		startTime = t.clock()
-		quickHull(inputs[n])
+		qHObj.quickHull()
+		qHObj.finalHull
 		endTime = t.clock()	
 		
 		# Storing execution time for n points
@@ -126,7 +129,7 @@ def main():
 	print("Running pyhull.convex_hull.ConvexHull (library function) for all input sizes in the dataset ...")
 	for n in inputs:
 		startTime = t.clock()
-		ConvexHull(inputs[n])
+		ConvexHull(inputs[n]).vertices
 		endTime = t.clock()	
 		
 		# Storing execution time for n points

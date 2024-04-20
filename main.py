@@ -8,7 +8,7 @@ from quickHull2 import quickHull
 from pyhull.convex_hull import ConvexHull
 
 # Settings
-WINDOWSIZE = 10
+WINDOWSIZE = 100
 
 def _Smoothen(numbers):
 	# Function to smoothen graphs using
